@@ -1,3 +1,5 @@
+pragma solidity 0.8.4;
+
 contract DomainManager {
     
     mapping(address => Domain[]) public domainsOfAddress;

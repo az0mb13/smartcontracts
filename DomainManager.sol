@@ -29,11 +29,9 @@ contract DomainManager {
     
     function createDomain(string memory _name) public {
         require((!isExists(_name)), "This domain is already exist");
-        require(bytes(_name).length > 0, "Name should not be
-                                                empty");
+        require(bytes(_name).length > 0, "Name should not be empty");
         domainCounter++;
-        Domain memory domain = Domain(domainCounter, _name 
-                                            msg.sender);
+        Domain memory domain = Domain(domainCounter, _name, msg.sender);
         domains[_name] = domain;
         domainsOfAddress[msg.sender].push(domain);
     }
